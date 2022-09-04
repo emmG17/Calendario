@@ -1,3 +1,4 @@
+/// <summary>Crea e imprime el calendario de un mes personalizado </summary>
 class Mes {
     // Cantidad de caracteres de anchura del calendario
     const int ANCHO = 50;    
@@ -86,7 +87,7 @@ class Mes {
         }
     }
 
-    // Desplegar en consola el calendario generado
+    ///<summary>Despliega en consola el calendario con los datos introducidos por el usuario</summary>
     public void PresentarCalendario(){
         Encabezado();
         EncabezadoDias();
