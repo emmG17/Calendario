@@ -1,5 +1,5 @@
 ﻿class Program {    
-    
+    // Mostrar una instruccion y leer la entrada del usuaio
     private static string ReadWrite(string instruccion){
         Console.Write($"> {instruccion}: ");
         string? input = Console.ReadLine();

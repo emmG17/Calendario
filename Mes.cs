@@ -1,5 +1,5 @@
 class Mes {
-
+    // Cantidad de caracteres de anchura del calendario
     const int ANCHO = 50;    
     public int cantidadDias { get; set; }
     public Dias diaInicial { get; set; }
@@ -14,13 +14,14 @@ class Mes {
         this.separadorFilas = new string(borde, ANCHO);
     }
 
-
+    // Crear el encabezado del calendario que contiene el nombre del mes
     private void Encabezado(){
         // Agregar los bordes inicial y final, en medio escribir el nombre del mes
         string filaNombre = borde + StringHelper.PadCenter(nombreMes, ' ', ANCHO - 2) + borde;
         Console.Write(separadorFilas + "\n" + filaNombre +"\n" +  separadorFilas + "\n");
     }
 
+    // Crear la fila que contiene los nombres de los dias de la semana
     private void EncabezadoDias(){
         // Borde inicial del encabezado con el nombre de los dias
         string encabezadoDias = borde.ToString();
@@ -37,6 +38,7 @@ class Mes {
         Console.Write(encabezadoDias + "\n" + separadorFilas + "\n");
     }
 
+    // Imprimir una fila del calendario (semana)
     private void Semana(int offsetInicial, int nSemana){
         string semana  = ""; // Cadena que recibira cada casilla de dia de la semana
 
@@ -46,7 +48,7 @@ class Mes {
             semana += borde;
             // Crear una casilla por cada dia de la semana
             for (int j = 0; j < 7; j++){
-                // Si es la segunda fila de la casill, imprimir el numero de dia
+                // Si es la segunda fila de la casilla, imprimir el numero de dia
                 if (i == 1){
                     // Calcular el dia del mes tomando en cuenta que dia inicio
                     int dia = (nSemana * 7) + j + 1 - offsetInicial;
@@ -66,6 +68,8 @@ class Mes {
         Console.Write(semana + separadorFilas + "\n");
     }
 
+
+    // Crear el numero de semanas requerido para cada mes
     private void _Mes(){
         // Calcular el numero de semanas que tendra el mes completas
         int semanas = (cantidadDias + (int) diaInicial) / 7;
